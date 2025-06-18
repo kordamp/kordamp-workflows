@@ -31,6 +31,10 @@ on:
         required: true
       mastodon-access-token:
         required: true
+      maven-username:
+        required: true
+      maven-password:
+        required: true
 
 jobs:
   release:
@@ -83,6 +87,8 @@ jobs:
           JRELEASER_GPG_PASSPHRASE: ${{ secrets.gpg-passphrase }}
           JRELEASER_GPG_PUBLIC_KEY: ${{ secrets.gpg-public-key }}
           JRELEASER_GPG_SECRET_KEY: ${{ secrets.gpg-secret-key }}
+          JRELEASER_NEXUS2_USERNAME: ${{ secrets.maven-username }}
+          JRELEASER_NEXUS2_PASSWORD: ${{ secrets.maven-password }}
           JRELEASER_MASTODON_ACCESS_TOKEN: ${{ secrets.mastodon-access-token }}
 
       - name: JReleaser output
