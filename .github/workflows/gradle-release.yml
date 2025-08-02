@@ -31,6 +31,12 @@ on:
         required: true
       mastodon-access-token:
         required: true
+      bluesky-host:
+        required: true
+      bluesky-handle:
+        required: true
+      bluesky-password:
+        required: true
       maven-username:
         required: true
       maven-password:
@@ -89,6 +95,9 @@ jobs:
           JRELEASER_GPG_SECRET_KEY: ${{ secrets.gpg-secret-key }}
           JRELEASER_MAVENCENTRAL_USERNAME: ${{ secrets.maven-username }}
           JRELEASER_MAVENCENTRAL_PASSWORD: ${{ secrets.maven-password }}
+          JRELEASER_BLUESKY_HOST: ${{ secrets.bluesky-host }}
+          JRELEASER_BLUESKY_HANDLE: ${{ secrets.bluesky-handle }}
+          JRELEASER_BLUESKY_PASSWORD: ${{ secrets.bluesky-password }}
           JRELEASER_MASTODON_ACCESS_TOKEN: ${{ secrets.mastodon-access-token }}
 
       - name: JReleaser output
